@@ -20,4 +20,4 @@ async function SubtemaPorId(id_subtema) {
     return result.rows;
 }
 
-module.exports = { ObtenerSubtemasByIdTopic, SubtemaPorId }
+module.exports = { GetAllSubTemas, ObtenerSubtemasByIdTopic, SubtemaPorId }

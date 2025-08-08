@@ -1,5 +1,16 @@
 const SubTema = require("../../model/subtemas/subtemaModel")
 
+async function getAllSubtemas(req, res) {
+    try {
+        const subtemas = await SubTema.GetAllSubTemas();
+        res.json(subtemas);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "error al obtener los subtemas" })
+    }
+
+}
+
 async function getSubtemasByIdTopic(req, res) {
     const { id_tema } = req.query;
     if (!id_tema) {
@@ -29,4 +40,4 @@ async function getSubtemaId(req, res) {
     }
 }
 
-module.exports = { getSubtemasByIdTopic, getSubtemaId };
+module.exports = { getAllSubtemas, getSubtemasByIdTopic, getSubtemaId };
