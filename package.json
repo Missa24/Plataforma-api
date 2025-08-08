@@ -12,7 +12,16 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",
+    "express-list-endpoints": "^7.1.1",
+    "module-alias": "^2.2.3",
+    "pg": "^8.16.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "_moduleAliases": {
+    "@db": "./db",
+    "@models": "./model",
+    "@controllers": "./controllers",
+    "@routes": "./routes"
   }
 }

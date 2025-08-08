@@ -1,13 +1,12 @@
-const swaggerJsdoc = require('swagger-jsdoc');
-const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
 
 const options = {
   definition: {
-    openapi: '3.0.0',  // versión de OpenAPI
+    openapi: '3.0.0',
     info: {
-      title: 'API Usuarios',  // título de la API
+      title: 'API Plataforma Educativa',
       version: '1.0.0',
-      description: 'Documentación básica de la API de usuarios',
+      description: 'Documentación interactiva de la API',
     },
     servers: [
       {
@@ -15,13 +14,8 @@ const options = {
       },
     ],
   },
-  apis: ['./routes/*.js'],  // archivos donde buscarás los comentarios para Swagger
+  apis: ['./routes/**/*.js'], // Puedes ajustar según tu estructura
 };
 
-const specs = swaggerJsdoc(options);
-
-function setupSwagger(app) {
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
-}
-
-module.exports = setupSwagger;
+const swaggerSpec = swaggerJsDoc(options);
+module.exports = swaggerSpec;
